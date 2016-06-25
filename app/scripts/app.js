@@ -11,7 +11,7 @@
 
 	//configure our routes 
 dashBoard.config(function($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/login');
+   $urlRouterProvider.otherwise('/root/work');
    $stateProvider
    // HOME STATES AND NESTED VIEWS ========================================
        .state('login', {
@@ -22,24 +22,29 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
            url: '/root',
            templateUrl: 'templates/root.html'
        })
-       //  .state('root.work', {
-       //     url: '/work',
-       //     templateUrl: 'templates/work.html',
-       //     controller: 'work'
-       // })
-
         .state('root.work', {
-          resolve:{
-           "check": function($location,$rootScope){
-               if(!$rootScope.loginIn){
-                 $location.path('/login.html')
-               }
-           }
-          },
-          url: '/root',
-          templateUrl: 'templates/root.html'
-          controller: 'work'
-      })
+           url: '/work',
+           templateUrl: 'templates/work.html',
+           controller: 'work'
+       })
+
+        .state('root.work.addDialog', {
+            templateUrl: 'templates/addDialog.html',
+            controller: 'work'
+        })
+
+      //   .state('root.work', {
+      //     resolve:{
+      //      "check": function($location,$rootScope){
+      //          if(!$rootScope.loginIn){
+      //            $location.path('/login.html')
+      //          }
+      //      }
+      //     },
+      //     url: '/root',
+      //     templateUrl: 'templates/root.html',
+      //     controller: 'work'
+      // })
        //  .state('root.producer', {
        //     url: '/producer',
        //     templateUrl: 'templates/producer.html',

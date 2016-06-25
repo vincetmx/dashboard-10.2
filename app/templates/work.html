@@ -8,7 +8,7 @@
             </ul>
         </div>
         <div class="col-xs-2">
-            <button class="btn btn-danger" aria-haspopup="true" aria-expanded="false">Add Item</button>
+            <button class="btn btn-danger" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#addModal" id="addItem">Add Item</button>
         </div>
         <div class="col-xs-2" id="first_input">
             <div class="form-group">
@@ -47,7 +47,7 @@
         </div>
     </div>
 </div>
-<div  ng-hide="list" ng-init="list=true" id="list_container" class="container-fluid">
+<div ng-hide="list" ng-init="list=true" id="list_container" class="container-fluid">
     <table class="table">
         <thead>
             <tr>
@@ -70,5 +70,6 @@
             </tr>
         </tbody>
     </table>
-    </div>
+</div>
 <div ui-view></div>
+<additemdirective></additemdirective>

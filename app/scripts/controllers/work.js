@@ -11,4 +11,16 @@ dashBoard.controller('work', function($scope, $http) {
     }, function myError(response) {
         console.log("ERROR");
     });
+
+
+    $scope.addItems = function() {
+        var newItem = {
+            title: $scope.addtitle,
+            author: $scope.addAuthor,
+            like: $scope.addLike,
+            comment: $scope.addComment,
+            image: ''
+        }
+        $scope.works.push(newItem);
+    };
 });

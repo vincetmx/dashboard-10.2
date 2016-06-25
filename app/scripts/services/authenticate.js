@@ -12,9 +12,7 @@ dashBoard.service('authenticateService', function($rootScope,$http,$location) {
         )
         .success(function(){ 
         $rootScope.loginIn=true;
-       $location.path('/root');})
+       $location.path('/root/work');})
         .error(function(){alert("wrong password")});
         }
     });
-
-[2:31
