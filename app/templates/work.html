@@ -3,8 +3,8 @@
         <div class="col-xs-2">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Design <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a ui-sref="#">List</a></li>
-                <li><a ui-sref="#">Card</a></li>
+                <li><a ng-click="grid=true; list=false">List</a></li>
+                <li><a ng-click="grid=false; list=true">Card</a></li>
             </ul>
         </div>
         <div class="col-xs-2">
@@ -32,7 +32,7 @@
         </div>
     </div>
 </div>
-<div id="work_container" class="container-fluid">
+<div ng-hide="grid" ng-init="grid=false" id="grid_container" class="container-fluid">
     <div class="row">
         <div class="col-xs-4" ng-repeat="item in works">
             <img class="img-responsive" src="{{ item.image }}">
@@ -47,4 +47,28 @@
         </div>
     </div>
 </div>
+<div  ng-hide="list" ng-init="list=true" id="list_container" class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Author</td>
+                <td>Likes</td>
+                <td>Comments</td>
+                <td>Edit</td>
+                <td>Remove</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in works">
+                <td>{{ item.title }}</td>
+                <td>{{ item.author }}</td>
+                <td>{{ item.like }}</td>
+                <td>{{ item.comment }}</td>
+                <td><a ui-sref="#">Edit</a></td>
+                <td><a ui-sref="#">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 <div ui-view></div>
