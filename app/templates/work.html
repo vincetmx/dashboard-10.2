@@ -12,29 +12,29 @@
         </div>
         <div class="col-xs-2" id="first_input">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Name" ng-model="search.title">
             </div>
         </div>
         <div class="col-xs-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Author">
+                <input type="text" class="form-control" placeholder="Author" ng-model="search.author">
             </div>
         </div>
         <div class="col-xs-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Like">
+                <input type="text" class="form-control" placeholder="Like" ng-model="search.like">
             </div>
         </div>
         <div class="col-xs-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Comment">
+                <input type="text" class="form-control" placeholder="Comment" ng-model="search.comment">
             </div>
         </div>
     </div>
 </div>
 <div ng-hide="grid" ng-init="grid=false" id="grid_container" class="container-fluid">
     <div class="row">
-        <div class="col-xs-4" ng-repeat="item in works">
+        <div class="col-xs-4" ng-repeat="item in works | filter:search">
             <img class="img-responsive" src="{{ item.image }}">
             <p class="title"> {{ item.title }} </p>
             <p class="author"> {{ item.author }} </p>
@@ -60,7 +60,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in works">
+            <tr ng-repeat="item in works | filter:search">
                 <td>{{ item.title }}</td>
                 <td>{{ item.author }}</td>
                 <td>{{ item.like }}</td>
