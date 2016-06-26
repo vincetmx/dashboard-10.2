@@ -27,12 +27,6 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
            templateUrl: 'templates/work.html',
            controller: 'work'
        })
-
-        .state('root.work.addDialog', {
-            templateUrl: 'templates/addDialog.html',
-            controller: 'work'
-        })
-
       //   .state('root.work', {
       //     resolve:{
       //      "check": function($location,$rootScope){
@@ -45,25 +39,7 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
       //     templateUrl: 'templates/root.html',
       //     controller: 'work'
       // })
-       //  .state('root.producer', {
-       //     url: '/producer',
-       //     templateUrl: 'templates/producer.html',
-       //     controller: 'producer'
-       // })
-       //  .state('root.overview', {
-       //     url: '/overview',
-       //     templateUrl: 'templates/overview.html',
-       //     controller: 'overview'
-       // })
-       //  .state('root.contact', {
-       //     url: '/contact',
-       //     templateUrl: 'templates/contact.html',
-       //     controller: 'contact'
-       // })
-       // .contact('addDialog', {
-       //     url: '/root',
-       //     templateUrl: 'templates/root.html'
-       // })
+       
        .state('404',{
        	url:'/404',
        	templateUrl:'templates/404.html'

@@ -23,4 +23,21 @@ dashBoard.controller('work', function($scope, $http) {
         }
         $scope.works.push(newItem);
     };
+
+    $scope.editItems = function(item) {
+        $scope.editIndex = -1;
+        $scope.editIndex = $scope.works.indexOf(item);
+        $scope.edittitle = item.title;
+        $scope.editAuthor = item.author;
+        $scope.editLike = item.like;
+        $scope.editComment = item.comment;
+    };
+
+    $scope.editConfirm = function() {
+        var i = $scope.editIndex;
+        $scope.works[i].author = $scope.editAuthor;
+        $scope.works[i].title = $scope.edittitle;
+        $scope.works[i].like = $scope.editLike;
+        $scope.works[i].comment = $scope.editComment;
+    };
 });

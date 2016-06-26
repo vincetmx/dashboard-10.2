@@ -10,3 +10,10 @@ dashBoard.directive('additemdirective',function(){
 		templateUrl: 'templates/addDialog.html'
 	};
 })
+.directive('edititemdirective',function(){
+	return{
+		restrict: 'E',
+        replace: true,
+		templateUrl: 'templates/editDialog.html'
+	};
+});
