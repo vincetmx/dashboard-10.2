@@ -40,4 +40,13 @@ dashBoard.controller('work', function($scope, $http) {
         $scope.works[i].like = $scope.editLike;
         $scope.works[i].comment = $scope.editComment;
     };
+
+    $scope.deleteItem = function(item) {
+        $scope.removeIndex = -1;
+        $scope.removeIndex = $scope.works.indexOf(item);
+    };
+
+    $scope.deleteConfirm = function() {
+        $scope.works.splice($scope.removeIndex, 1);
+    };
 });

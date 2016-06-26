@@ -42,13 +42,13 @@
             <p class="comments"> {{ item.comment }} </p>
             <ul class="pull-right">
                 <li><a ng-click="editItems(item)" data-toggle="modal" data-target="#editModal">Edit</a></li>
-                <li><a ui-sref="#">Delete</a></li>
+                <li><a ng-click="deleteItem(item)" data-toggle="modal" data-target="#deleteModal"> Delete </a></li>
             </ul>
         </div>
     </div>
 </div>
 <div ng-hide="list" ng-init="list=true" id="list_container" class="container-fluid">
-    <table class="table">
+    <table class="table table-hover table-striped">
         <thead>
             <tr>
                 <td>Name</td>
@@ -66,7 +66,7 @@
                 <td>{{ item.like }}</td>
                 <td>{{ item.comment }}</td>
                 <td><a ng-click="editItems(item)" data-toggle="modal" data-target="#editModal">Edit</a></td>
-                <td><a ui-sref="#">Delete</a></td>
+                <td><a ng-click="deleteItem(item)" data-toggle="modal" data-target="#deleteModal"> Delete </a></td>
             </tr>
         </tbody>
     </table>
@@ -74,3 +74,5 @@
 <div ui-view></div>
 <additemdirective></additemdirective>
 <edititemdirective></edititemdirective>
+<deleteitemdirective></deleteitemdirective>
+
