@@ -19,6 +19,13 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/login.html'
         })
         .state('root', {
+            // resolve: {
+            //     "check": function($location, $rootScope) {
+            //         if (!$rootScope.loginIn) {
+            //             $location.path('/login.html')
+            //         }
+            //     }
+            // },
             url: '/root',
             templateUrl: 'templates/root.html'
         })

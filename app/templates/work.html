@@ -22,19 +22,20 @@
         </div>
         <div class="col-xs-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Like" ng-model="search.like">
+                <input type="text" class="form-control" placeholder="Like" ng-model="searchLike">
             </div>
         </div>
         <div class="col-xs-2">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Comment" ng-model="search.comment">
+                <input type="text" class="form-control" placeholder="Comment" ng-model="searchComment">
             </div>
         </div>
     </div>
 </div>
 <div ng-hide="grid" ng-init="grid=false" id="grid_container" class="container-fluid">
     <div class="row">
-        <div class="col-xs-4" ng-repeat="item in works | filter:search">
+        <div class="col-xs-4" ng-repeat="item in works | filter:search |
+filter:greaterThanLike | filter:greaterThanComment">
             <img class="img-responsive" src="{{ item.image }}">
             <p class="title"> {{ item.title }} </p>
             <p class="author"> {{ item.author }} </p>
@@ -60,7 +61,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in works | filter:search">
+            <tr ng-repeat="item in works | filter:search | filter:greaterThanLike | filter:greaterThanComment">
                 <td>{{ item.title }}</td>
                 <td>{{ item.author }}</td>
                 <td>{{ item.like }}</td>
@@ -75,4 +76,3 @@
 <additemdirective></additemdirective>
 <edititemdirective></edititemdirective>
 <deleteitemdirective></deleteitemdirective>
-

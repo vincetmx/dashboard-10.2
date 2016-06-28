@@ -25,7 +25,6 @@ dashBoard.controller('work', function($scope, $http) {
     };
 
     $scope.editItems = function(item) {
-        $scope.editIndex = -1;
         $scope.editIndex = $scope.works.indexOf(item);
         $scope.edittitle = item.title;
         $scope.editAuthor = item.author;
@@ -49,4 +48,29 @@ dashBoard.controller('work', function($scope, $http) {
     $scope.deleteConfirm = function() {
         $scope.works.splice($scope.removeIndex, 1);
     };
+
+    $scope.greaterThanLike = function(item) {
+       var partNum=item.like.substring(0,item.like.length-6).split(',');
+       var num=parseInt(partNum[0]+partNum[1]);  
+           if(!$scope.searchLike){  
+               return true;         
+           }
+         if (num>parseInt($scope.searchLike)) {                
+             return true;
+         } else {                
+             return false;
+         }
+       };
+    $scope.greaterThanComment = function(item) {
+       var partNum=item.comment.substring(0,item.comment.length-9).split(',');
+       var num=parseInt(partNum[0]+partNum[1]);  
+           if(!$scope.searchComment){  
+               return true;         
+           }
+         if (num>parseInt($scope.searchComment)) {                
+             return true;
+         } else {                
+             return false;
+         }
+       }
 });
