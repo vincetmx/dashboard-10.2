@@ -1,10 +1,12 @@
-    <div class="container-fluid" id="background-img">
-    	<div id="login_col" class="col-sm-4 col-sm-offset-4 col-xs-12">
-    	<ul id="login_ul">
-            <li class="login_li"> <p id="login">Login </p></li>
-            <li class="login_li"><input class="login_input" ng-model="username" type="text" placeholder="Username" /></li>
-            <li class="login_li"><input class="login_input" ng-model="password" type="password" placeholder="Password" /></li>
-            <li class="login_li"><button ng-click="submit()" type="button" class="btn btn-success"> Login </button></li>
-        </ul>
-        </div>
-    </div>
+
+<div class="container-fluid" id="background-img">
+       <div id="login_crl" ng-controller="loginCtrl" class="col-sm-4 col-sm-offset-4 col-xs-12">
+       <ul id="login_ul">
+           <li class="login_li"> <p id="login">Login </p></li>
+           <li ng-hide="login_error" ng-init="login_error=true" class="login_error"><p> Login details error </p></li>
+           <li class="login_li"><input class="login_input" ng-model="username" type="text" placeholder="username" /></li>
+           <li class="login_li"><input class="login_input" ng-model="password" type="password" placeholder="Password" /></li>
+           <li class="login_li"><button  id="login_success" type="button" class="btn btn-success" ng-click="submit()"> Login </button></li>
+       </ul>
+       </div>
+   </div>

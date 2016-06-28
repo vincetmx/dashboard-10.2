@@ -1,29 +1,25 @@
-<!--don't forget to add modal.js file into index.html-->
-    <div class="col-xs-2">
-            <button class="btn btn-danger" aria-haspopup="true" aria-expanded="false" data-toggle='modal' data-target ='#addDialog'>Add Item</button>
-
-        <!--Modal-->
-		<div class='modal fade' id='addDialog' role='dialog'>
-			<div class='modal-dialog modal-lg'> <!--modal size, proper width and margin of the modal-->
-				<div class='modal-content'>  <!--border,background-coor, etc.-->
-					<div class='modal-header'>
-          				<h4 class="modal-title">Add item</h4>
-						
-				    </div>
-				    <div class='modal-body'>
-				    	<form>
-				    		<input type="" name="" placeholder="Title">
-				    		<input type="" name="" placeholder='Author'>
-				    		<input type="" name="" placeholder="Like">
-				    		<input type="" name="" placeholder='Comment'>
-				    	</form>
-				    </div>
-				    <div class='modal-footer'>
-				    	<button type='button' class='btn btn-default'>submit</button>
-				    	<button type='button' class='btn btn-default' data-dismiss='modal'>cancle</button>
-				    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-			
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" ng-controller="work">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form>
+                    <h4 class="modal-title" id="addModalLabel">Add item</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Title" ng-model="addtitle" placeholder="Title" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Author" ng-model="addAuthor" placeholder="Author" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Like" ng-model="addLike" placeholder="Like" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Comment" ng-model="addComment" placeholder="Comment" />
+                    </div>
+                    <button type="button" id="work_submit" class="btn btn-success" data-dismiss="modal" ng-click="addItems()">submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
