@@ -1,0 +1,33 @@
+$background-color: #ef5350;
+$black: black;
+$white: white;
+$pad: 5px;
+$margin:10px;
+$top: 30px;
+
+#sidebar {
+
+    li{
+	padding:$pad;
+	border-left: $pad solid $white;}
+
+    ul{
+	list-style:none;
+	margin-top: $top;}
+
+    span{
+	margin-right: $margin;}
+
+    .nav-link{
+	text-decoration: none;
+	color: $black;}
+
+    .nav-item:hover{
+	color:$white;
+	border-left: $pad solid $background-color;
+	background-color:$background-color;
+	cursor:pointer;}
+	
+    .nav-item:hover .nav-link{
+	color:$white;}
+}
