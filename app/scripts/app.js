@@ -41,6 +41,11 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             controller: 'overview'
         })
 
+        .state('root.contact', {
+            url: '/contact',
+            templateUrl: 'templates/contact.html',
+            controller: ''
+        })
         .state('root.work.confirmBox', {
             templateUrl: 'templates/confirmBox.html'
         })

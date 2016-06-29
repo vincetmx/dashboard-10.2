@@ -29,4 +29,7 @@ dashBoard.controller("redirectPage",function($scope,$location){
     $scope.toWork = function(){
         $location.path('root/work');
     }
+    $scope.toContact = function(){
+        $location.path('root/contact');
+    }
 });
