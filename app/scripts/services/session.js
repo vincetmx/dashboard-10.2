@@ -13,6 +13,6 @@ dashBoard.service('sessionService',function(){
         }
         this.destroySession =function()
         {
-            sessionStorage.clear();;
+            sessionStorage.clear();
         }
     });

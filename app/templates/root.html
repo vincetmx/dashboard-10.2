@@ -33,14 +33,14 @@
        </div>
    </div>
 </nav> -->
-<div  id="sidebar" class="container-fluid">
+<div  id="sidebar" class="container-fluid" ng-controller="redirectPage">
     <div class="row">
         <div class="col-xs-2">
             <ul>
-                <li class="nav-item"><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span><a id="overview" class="nav-link" href="">Overview</a></li>
-                <li class="nav-item active"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a id="work" class="nav-link" href="">Work</a></li>
-                <li class="nav-item"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span><a id="producer" class="nav-link" href="">Producer</a></li>
-                <li class="nav-item"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><a id="contact" class="nav-link" href="">Contact</li>
+                <li class="nav-item" ng-click="toOverView()"><span class="glyphicon glyphicon-cloud" aria-hidden="true" ></span><a id="overview" class="nav-link" href="">Overview</a></li>
+                <li class="nav-item active" ng-click="toWork()"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a id="work" class="nav-link" href="">Work</a></li>
+                <li class="nav-item" ng-click="toProducer()"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span><a id="producer" class="nav-link" href="">Producer</a></li>
+                <li class="nav-item" ng-click="toContact()"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><a id="contact" class="nav-link" href="">Contact</li>
 			</ul>
 		</div>
 		<div class="col-xs-10">
