@@ -5,21 +5,12 @@
 dashBoard.service('authenticateService', function($rootScope, $http, $location, sessionService) {
     $rootScope.loginIn = false;
     this.loginIn = function(username, password) {
-        $http({
+      return  $http({
                 url: '/api/login',
                 method: 'POST',
                 data: { "userName": username, "password": password }
             })
-            .success(function() {
-                $rootScope.loginIn = true;
-                sessionService.setSession("id", username);
-                $location.path('/root/work');
-            })
-            .error(function() {
-                alert("incorrect credentials")
-                $rootScope.login_error=false;
-            });
-    }
+              }
 
     this.logout = function() {
         sessionService.destroySession();
