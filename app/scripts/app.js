@@ -7,11 +7,11 @@
  *
  * Main module of the application. Define the routing architecture for the app
  */
-var dashBoard = angular.module('dashApp', ['ui.router']);
+var dashBoard = angular.module('dashApp', ['ui.router','ui.bootstrap']);
 
 //configure our routes 
 dashBoard.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/root/overview');
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {

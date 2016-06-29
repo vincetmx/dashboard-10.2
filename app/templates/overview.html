@@ -1,5 +1,38 @@
-<div ng-controller="overview">
-	<p ng-model>{{username}}</p>
-	<p ng-model>{{nickname}}</p>
-	<img class="img-responsive" src="{{ profileimg }}">
+<h2> Overview </h2>
+<div class="jumbotron">
+    <div ng-controller="overview">
+        <p id="justtext" ng-model>{{username}} - {{nickname}},</p>
+        <img class="img-responsive" width="150" src="{{ profileimg }}">
+        <br>
+        <p> Welcome to dashboard application. This application guide will introduce you to things that you can do while staying here. All the sections mentioned below can be accesed from the navigation menu on the left side</p>
+        <br>
+        <div>
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        some text here, on the left side of the header.
+                    </accordion-heading>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+            </accordion>
+            <br>
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        some text here, on the left side of the header.
+                    </accordion-heading>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+            </accordion>
+            <br>
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        some text here, on the left side of the header.
+                    </accordion-heading>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
 </div>
