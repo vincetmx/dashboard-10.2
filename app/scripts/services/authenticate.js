@@ -2,7 +2,7 @@
 // AUTHENTICATE SERVICE
 // Description: Define the authenticateService that has 3 functionalities: login, logout, and islogged 
 
-dashBoard.service('authenticateService', function( $rootScope, $http, $location, sessionService) {
+dashBoard.service('authenticateService', function($rootScope,$http, $location, sessionService) {
     $rootScope.loginIn = false;
     this.loginIn = function(username, password) {
       return  $http({
@@ -14,7 +14,7 @@ dashBoard.service('authenticateService', function( $rootScope, $http, $location,
 
     this.logout = function() {
         sessionService.destroySession();
-        $location.path('/login')
+        $location.path('/login');
     }
     this.islogged = function() {
 

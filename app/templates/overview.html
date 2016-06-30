@@ -1,38 +1,25 @@
 <h2> Overview </h2>
 <div class="jumbotron">
-    <div ng-controller="overview">
-        <p id="justtext" ng-model>{{username}} - {{nickname}},</p>
-        <img class="img-responsive" width="150" src="{{ profileimg }}">
-        <br>
-        <p> Welcome to dashboard application. This application guide will introduce you to things that you can do while staying here. All the sections mentioned below can be accesed from the navigation menu on the left side</p>
-        <br>
-        <div>
-            <accordion>
-                <accordion-group>
-                    <accordion-heading>
-                        some text here, on the left side of the header.
-                    </accordion-heading>
-                    This is just some content to illustrate fancy headings.
-                </accordion-group>
-            </accordion>
-            <br>
-            <accordion>
-                <accordion-group>
-                    <accordion-heading>
-                        some text here, on the left side of the header.
-                    </accordion-heading>
-                    This is just some content to illustrate fancy headings.
-                </accordion-group>
-            </accordion>
-            <br>
-            <accordion>
-                <accordion-group>
-                    <accordion-heading>
-                        some text here, on the left side of the header.
-                    </accordion-heading>
-                    This is just some content to illustrate fancy headings.
-                </accordion-group>
-            </accordion>
-        </div>
+    <p id="justtext">{{username}} - {{nickname}},</p>
+    <img class="img-responsive" width="150" src="{{ profileimg }}">
+    <br>
+    <p> Welcome to dashboard application. This application guide will introduce you to things that you can do while staying here. All the sections mentioned below can be accesed from the navigation menu on the left side</p>
+    <br>
+    <div id="acco">
+        <uib-accordion close-others="false">
+            <uib-accordion-group heading="Work Section" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" class="acco_head">
+                This section contains the demonstration for all the final products that has been produced in the market.
+            </uib-accordion-group>
+        </uib-accordion>
+        <uib-accordion close-others="false">
+            <uib-accordion-group heading="Producer Section" is-open="status.isSecondOpen" is-disabled="status.isSecondDisabled" class="acco_head">
+                This section contains information about the creator of all the works and how to get in touch with them.
+            </uib-accordion-group>
+        </uib-accordion>
+        <uib-accordion close-others="false">
+            <uib-accordion-group heading="Contact Section" is-open="status.isthirdOpen" is-disabled="status.isthirdDisabled" class="acco_head">
+                This section provides a gateway for users to voice out opinions regarding the application and any other questions or concerns that one might have
+            </uib-accordion-group>
+        </uib-accordion>
     </div>
 </div>

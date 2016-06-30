@@ -2,7 +2,9 @@
 // LOGIN CONTROLLER
 // Description: Define the following functionalities:
 // Making service calls to login a user
-dashBoard.controller("loginCtrl", function($scope, $rootScope, authenticateService, sessionService, $location) {
+
+dashBoard.controller("loginCtrl", function($rootScope,$scope, authenticateService, sessionService, $location) {
+
     $scope.submit = function() {
         authenticateService.loginIn($scope.username, $scope.password)
             .success(function() {

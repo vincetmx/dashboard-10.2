@@ -21,3 +21,15 @@ dashBoard.controller("loginStatus", function($scope, getUser, authenticateServic
     // var current = mydate.getFullYear().toString() + "-" + (mydate.getMonth() + 1).toString() + "-" + mydate.getDate().toString();
     $scope.date = mydate;
 });
+
+dashBoard.controller("redirectPage",function($scope,$location){
+    $scope.toOverView = function(){
+        $location.path('root/overview');   
+     }
+    $scope.toWork = function(){
+        $location.path('root/work');
+    }
+    $scope.toContact = function(){
+        $location.path('root/contact');
+    }
+});

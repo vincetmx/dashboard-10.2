@@ -11,7 +11,9 @@ var dashBoard = angular.module('dashApp', ['ui.router','ui.bootstrap']);
 
 //configure our routes 
 dashBoard.config(function($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('/root/overview');
+
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {
@@ -19,13 +21,13 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/login.html'
         })
         .state('root', {
-            resolve: {
-                "check": function($location, $rootScope) {
-                    if (!$rootScope.loginIn) {
-                        $location.path('/login.html')
-                    }
-                }
-            },
+            // resolve: {
+            //     "check": function($location, $rootScope) {
+            //         if (!$rootScope.loginIn) {
+            //             $location.path('/login.html')
+            //         }
+            //     }
+            // },
             url: '/root',
             templateUrl: 'templates/root.html'
         })
@@ -41,6 +43,11 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             controller: 'overview'
         })
 
+        .state('root.contact', {
+            url: '/contact',
+            templateUrl: 'templates/contact.html',
+            controller: ''
+        })
         .state('root.work.confirmBox', {
             templateUrl: 'templates/confirmBox.html'
         })
