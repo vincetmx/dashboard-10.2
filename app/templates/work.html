@@ -1,8 +1,9 @@
 <div id="work_nav" class="container-fluid">
     <div class="row">
         <div class="col-xs-2">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Design <span class="caret"></span></button>
-            <ul class="dropdown-menu">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Select Design <span class="caret"></span>
+            </button>
+            <ul id="dropmenu_ul" class="dropdown-menu">
                 <li><a ng-click="grid=true; list=false">List</a></li>
                 <li><a ng-click="grid=false; list=true">Card</a></li>
             </ul>
@@ -41,7 +42,7 @@ filter:greaterThanLike | filter:greaterThanComment">
             <p class="author"> {{ item.author }} </p>
             <p class="likes"> {{ item.like }} </p>
             <p class="comments"> {{ item.comment }} </p>
-            <ul class="pull-right">
+            <ul id="editdelete" class="pull-right">
                 <li><a ng-click="editItems(item)" data-toggle="modal" data-target="#editModal">Edit</a></li>
                 <li><a ng-click="deleteItem(item)" data-toggle="modal" data-target="#deleteModal"> Delete </a></li>
             </ul>
@@ -66,8 +67,8 @@ filter:greaterThanLike | filter:greaterThanComment">
                 <td>{{ item.author }}</td>
                 <td>{{ item.like }}</td>
                 <td>{{ item.comment }}</td>
-                <td><a ng-click="editItems(item)" data-toggle="modal" data-target="#editModal">Edit</a></td>
-                <td><a ng-click="deleteItem(item)" data-toggle="modal" data-target="#deleteModal"> Delete </a></td>
+                <td class="list_td"><a ng-click="editItems(item)" data-toggle="modal" data-target="#editModal">Edit</a></td>
+                <td class="list_td"><a ng-click="deleteItem(item)" data-toggle="modal" data-target="#deleteModal"> Delete </a></td>
             </tr>
         </tbody>
     </table>

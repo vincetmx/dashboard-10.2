@@ -78,3 +78,15 @@ h4{
 #delete_p{
 	color:black;
 }
+
+#dropmenu_ul li:hover{
+	cursor:pointer;
+}
+
+#editdelete:hover{
+	cursor:pointer;
+}
+
+.list_td:hover{
+	cursor:pointer;
+}
