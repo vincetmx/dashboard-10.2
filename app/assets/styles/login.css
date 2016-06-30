@@ -38,3 +38,10 @@
 #col-sm-4{
 	margin-top: 10%;
 }
+
+.login_error{
+	color:white;
+	background-color: #ef5350;
+	padding:0;
+	font-weight: bold;
+}

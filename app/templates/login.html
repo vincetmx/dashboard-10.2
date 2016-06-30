@@ -3,7 +3,7 @@
        <div id="login_crl" ng-controller="loginCtrl" class="col-sm-4 col-sm-offset-4 col-xs-12">
        <ul id="login_ul">
            <li class="login_li"> <p id="login">Login </p></li>
-           <li ng-hide="login_error" ng-init="login_error=true" class="login_error"><p> Login details error </p></li>
+           <li ng-hide="login_error" ng-init="login_error=true" class="login_error"><p> Incorrect information, please try again </p></li>
            <li class="login_li"><input class="login_input" ng-model="username" type="text" placeholder="username" /></li>
            <li class="login_li"><input class="login_input" ng-model="password" type="password" placeholder="Password" /></li>
            <li class="login_li"><button  id="login_success" type="button" class="btn btn-success" ng-click="submit()"> Login </button></li>
