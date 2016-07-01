@@ -1,1 +1,80 @@
-hello contact
+<div class="container" ng-controller="contactCtrl">
+    <h2>Contact</h2>
+    <ul class="nav nav-pills" style="border-left-width: 0px;">
+        <li style="border-left-width: 0px;" id="list_active" class="active"><a data-toggle="pill" href="#form_one">Information</a></li>
+        <li class="list_head" style="border-left-width: 0px;"><a data-toggle="pill" href="#form_two">Query</a></li>
+        <li class="list_head" style="border-left-width: 0px;"><a data-toggle="pill" href="#menu2">Confirmation</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="form_one" class="tab-pane fade in active" style="border-left-width: 0px;">
+            <form name="inform">
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input class="form-control" id="exampleInputEmail1" placeholder="First Name" name="inform.myname" required ng-model="name">
+                    <span class="glyphicon glyphicon-user
+ form-control-feedback" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-hide="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input class="form-control" id="exampleInputPassword1" placeholder="LastName" ng-model="lastName">
+                    <span class="glyphicon glyphicon-user
+ form-control-feedback" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-hide="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email" required ng-model="email">
+                    <span class="glyphicon glyphicon-envelope
+form-control-feedback" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-hide="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input type="tel" class="form-control" id="exampleInputEmail1" placeholder="Phone" ng-model="phone">
+                    <span class="glyphicon glyphicon-phone form-control-feedback" aria-hidden="true" ng-hide="false"></span>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-hide="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1">Location</label>
+                    <br>
+                    <select ng-options="item as item.title for item in locations track by item.value" ng-model="selected"></select>
+                </div>
+                <div class="show_time">
+                    <p ng-model="cureentTime">The current time is: {{currentTime|date:'medium'}}
+                        <p>
+                </div>
+                <br>
+                {{inform.$valid}}
+                <button class="btn btn-default" ng-disabled="!inform.$valid" class="myButton" type="submit">Next</button>
+            </form>
+        </div>
+        <div id="form_two" class="tab-pane fade" style="border-left-width: 0px;">
+            <form>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input class="form-control" id="exampleInputEmail1" placeholder="Title">
+                    <span class="glyphicon glyphicon-user
+ form-control-feedback" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-hide="true"></span>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+                <select ng-options="item as item.title for item in categories track by item.value" ng-model="selected"></select>
+            </form>
+            <br>
+            <!--  <div ng-controller="RatingDemoCtrl">
+                <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+                <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+            </div> -->
+            <br>
+            <a href="#" class="myButton">Next</a>
+        </div>
+        <div id="menu2" class="tab-pane fade" style="border-left-width: 0px;">
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+    </div>
+</div>
