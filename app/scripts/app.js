@@ -7,11 +7,13 @@
  *
  * Main module of the application. Define the routing architecture for the app
  */
-var dashBoard = angular.module('dashApp', ['ui.router']);
+var dashBoard = angular.module('dashApp', ['ui.router', 'ui.bootstrap']);
 
 //configure our routes 
 dashBoard.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/root/work');
+
+    $urlRouterProvider.otherwise('/login');
+
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {
@@ -19,13 +21,13 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/login.html'
         })
         .state('root', {
-            // resolve: {
-            //     "check": function($location, $rootScope) {
-            //         if (!$rootScope.loginIn) {
-            //             $location.path('/login.html')
-            //         }
-            //     }
-            // },
+            resolve: {
+                "check": function($location, $rootScope) {
+                    if (!$rootScope.loginIn) {
+                        $location.path('/login.html')
+                    }
+                }
+            },
             url: '/root',
             templateUrl: 'templates/root.html'
         })
@@ -35,15 +37,20 @@ dashBoard.config(function($stateProvider, $urlRouterProvider) {
             controller: 'work'
         })
 
-        .state('root.overview', {
-            url: '/overview',
-            templateUrl: 'templates/overview.html',
-            controller: 'overview'
-        })
+    .state('root.overview', {
+        url: '/overview',
+        templateUrl: 'templates/overview.html',
+        controller: 'overview'
+    })
 
-        .state('root.contact', {
+    .state('root.contact', {
             url: '/contact',
             templateUrl: 'templates/contact.html',
+            controller: ''
+        })
+        .state('root.producer', {
+            url: '/producer',
+            templateUrl: 'templates/producer.html',
             controller: ''
         })
         .state('root.work.confirmBox', {

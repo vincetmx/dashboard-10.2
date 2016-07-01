@@ -22,14 +22,21 @@ dashBoard.controller("loginStatus", function($scope, getUser, authenticateServic
     $scope.date = mydate;
 });
 
-dashBoard.controller("redirectPage",function($scope,$location){
-    $scope.toOverView = function(){
-        $location.path('root/overview');   
-     }
-    $scope.toWork = function(){
+dashBoard.controller("redirectPage", function($scope, $location) {
+    $scope.toOverView = function() {
+        $location.path('root/overview');
+    }
+    $scope.toWork = function() {
         $location.path('root/work');
     }
-    $scope.toContact = function(){
+    $scope.toContact = function() {
         $location.path('root/contact');
+    }
+    $scope.toProducer = function() {
+        $location.path('root/producer');
+    }
+
+    $scope.isActive = function(route) {
+        return route === $location.path();
     }
 });
