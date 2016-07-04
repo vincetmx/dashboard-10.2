@@ -12,7 +12,7 @@ var dashBoard = angular.module('dashApp', ['ui.router', 'ui.bootstrap']);
 //configure our routes 
 dashBoard.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/root/work');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
     // HOME STATES AND NESTED VIEWS ========================================

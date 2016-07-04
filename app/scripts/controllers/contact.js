@@ -23,7 +23,7 @@ dashBoard.controller("TabCtrl", function($scope, contactService,$window) {
                 console.log("ERROR");
             });
         $scope.myform = {};
-        $scope.active = 1;
+        $scope.active = 0;
         $scope.altActive=function(index){
             $scope.active = index;
         }
