@@ -15,33 +15,17 @@
         </div>
     </div>
 </nav>
-<!-- <nav id="main_nav" class="navbar navbar-default">
-   <div class="container-fluid">
-       <div class="navbar-header">
-           <a class="navbar-brand" href="#">
-               <img alt="Brand" src="../assets/images/src/app/logo.png">
-           </a>
-       </div>
-       <div ng-controller="loginStatus">
-           <ul id="realtime" class="nav navbar-nav">
-               <li ng-model="name">{{name}}</li></br>
-               <li ng-model="date">{{date}}</li>
-           </ul>
-           <button type="button" class="btn btn-default pull-right" ng-click="logout()">Log Out</button>
-       </div>
-   </div>
-</nav> -->
-<div id="sidebar" class="container-fluid" ng-controller="redirectPage">
+<div id="sidebar_root" class="container-fluid" ng-controller="redirectPage">
     <div class="row">
         <div class="col-sm-2 col-xs-12">
-            <ul id="sidebar_ul">
-                <li class="nav-item" ng-click="toOverView()" ng-class="{active:isActive('/root/overview')}"><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span><a id="overview" class="nav-link" href="">Overview</a></li>
+            <ul id="sidebar_root_ul">
+                <li class="root_nav-item" ng-click="toOverView()" ng-class="{active:isActive('/root/overview')}"><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span><a id="overview" class="nav-link" href="">Overview</a></li>
 
-                <li class="nav-item" ng-click="toWork()" ng-class="{active:isActive('/root/work')}"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a id="work" class="nav-link" href="">Work</a></li>
+                <li class="root_nav-item" ng-click="toWork()" ng-class="{active:isActive('/root/work')}"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a id="work" class="nav-link" href="">Work</a></li>
 
-                <li class="nav-item" ng-click="toProducer()" ng-class="{active:isActive('/root/producer')}"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span><a id="producer" class="nav-link" href="">Producer</a></li>
+                <li class="root_nav-item" ng-click="toProducer()" ng-class="{active:isActive('/root/producer')}"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span><a id="producer" class="nav-link" href="">Producer</a></li>
 
-                <li class="nav-item" ng-click="toContact()" ng-class="{active:isActive('/root/contact')}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><a id="contact" class="nav-link" href="">Contact</a></li>
+                <li class="root_nav-item" ng-click="toContact()" ng-class="{active:isActive('/root/contact')}"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><a id="contact" class="root_nav-link" href="">Contact</a></li>
             </ul>
         </div>
         <div class="col-sm-10 col-xs-12">

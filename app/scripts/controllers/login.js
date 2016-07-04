@@ -6,6 +6,7 @@
 dashBoard.controller("loginCtrl", function($rootScope,$scope, authenticateService, sessionService, $location) {
 
     $scope.submit = function() {
+        console.log($scope.username);
         authenticateService.loginIn($scope.username, $scope.password)
             .success(function() {
                 $rootScope.loginIn = true;

@@ -1,13 +1,26 @@
-#form_one span{
+#tab_one {
+width:30%;
+}
+#tab_two {
+width:30%;
+}
+#tab_three {
+width:30%;
+}
+#sidebar .nav-item:hover{
 color:black;
 }
-#form_one label{
+#form_info label{
 color:black;
 }
-#form_one select{
+#form_info select{
 	width: 100%;
 	color: black;
 }
+#form_info span{
+	color: black;
+}
+
 #form_two span{
 color:black;
 }
@@ -77,19 +90,9 @@ width: 30%;
 	position:relative;
 	top:1px;
 }
-.star{
-	display:inline-block;
-	width: auto;
-}
-.star span:last-child{
-	display: none;
-}
-.star span:first-child{
-	display: inline-block;
-}
-.star:hover span:last-child{
-	display: inline-block;
-}
-.star:hover span:first-child{
-	display: none;
+.details{
+	border:1px solid grey;
+	padding-left: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }

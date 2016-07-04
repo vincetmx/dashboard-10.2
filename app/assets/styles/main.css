@@ -1,41 +1,41 @@
-#sidebar #sidebar_ul{
+#sidebar_root #sidebar_root_ul{
 	list-style:none;
 	margin-top: 30px;
 	display:block;
 	padding-left: 0;
 }
 
-#sidebar li{
+#sidebar_root li{
 	padding:5px;
 	border-left: 5px solid white;
 }
 
-#sidebar span{
+#sidebar_root span{
 	margin-right: 10px;
 }
 
-#sidebar .nav-link{
+#sidebar_root .root_nav-link{
 	text-decoration: none;
 	color:black;
 }
 
-#sidebar .nav-item:hover{
+#sidebar_root .root_nav-item:hover{
 	color:white;
 	border-left: 5px solid #ef5350;
 	background-color: #ef5350;
 	cursor:pointer;
 }
 
-#sidebar .nav-item:hover .nav-link{
+#sidebar_root .root_nav-item:hover .root_nav-link{
 	color:white;
 }
 
-#sidebar .active{
+/*#sidebar_root .active{
 	color:#ef5350;
 	border-left: 5px solid #ef5350;
 }
-
-#sidebar .active .nav-link{
+*/
+#sidebar_root .active .root_nav-link{
 	color:#ef5350;
 }
 
