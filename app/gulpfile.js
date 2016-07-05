@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var clean=require('gulp-clean');
 var imgmin = require('gulp-imagemin');
-// var jshint = require('gulp-jshint');
+var jshint = require('gulp-jshint');
 var sasscompile = require('gulp-sass');
 
 gulp.task('default', function() {
@@ -25,8 +25,15 @@ gulp.task('clean', function(){
 		.pipe(clean());
 });
 
-// gulp.task('jshint',function(){
-// 	 return gulp.src('./scritps/controllers/work.js')
-//     .pipe(jshint())
-//     .pipe(jshint.reporter('YOUR_REPORTER_HERE'));
-// });
+gulp.task('jshint',function(){
+	 return gulp.src(['./scripts/*.js','./scripts/**/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish', {beep: true}));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('./scripts/*.js', ['jshint']);
+  gulp.watch('./scripts/**/*.js', ['jshint']);
+  gulp.watch('./assets/images/src/**/*',['imagemin']);
+  gulp.watch('./assets/sass/*.scss',['sass']);
+});
