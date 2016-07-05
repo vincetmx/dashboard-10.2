@@ -30,11 +30,11 @@
 	color:white;
 }
 
-/*#sidebar_root .active{
+#sidebar_root .act{
 	color:#ef5350;
 	border-left: 5px solid #ef5350;
 }
-*/
+
 #sidebar_root .active .root_nav-link{
 	color:#ef5350;
 }
