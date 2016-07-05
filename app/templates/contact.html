@@ -57,38 +57,48 @@
             </form>
             <br>
             <div ng-controller="RatingDemoCtrl">
-                <p>Priority<p>
-                <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" required ng-model="myform.priority"></uib-rating>
-                <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+                <p>Priority
+                    <p>
+                        <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" required ng-model="myform.priority"></uib-rating>
+                        <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
             </div>
             <br>
             <button class="btn btn-default" ng-click="altActive(2)" class="myButton" ng-disabled="!form_query.$valid">Next</button>
         </uib-tab>
         <uib-tab index="2" id="tab_three" heading="Confirmation" disable="!form_query.$valid">
-        <br>
-        <p>Here is the confirmation for your query, if everything is correct, feel free to send it to us, we would love to take a look and get you back as soon as possible. In the meantime, you can send the confirmation to your email by clicking on the "Mail To" Link</p>
-        <strong><p>Confirmation ID<p></strong>
-        <p>#4498906229<p>
-        <strong><p>Confirmation Date<p></strong>
-         <p ng-model="cureentTime">The current time is: {{currentTime|date:'medium'}}</p>
-         <strong><p>Confirmation Details<p></strong>
-        <div class="details">
-            <p>====== Information =======<p>            
-            <p>Full Name:{{myform.name}}&nbsp{{myform.lastName}}
-            <br><br> Email:&nbsp{{myform.email}}
-            <br><br>Phone:&nbsp{{myform.phone}}
-            <br><br> Location:&nbsp{{myform.selected.title}}
             <br>
-            <p>========= Query ==========<p>
-             Title:{{myform.title}}
-            <br><br> Content:&nbsp{{myform.comment}}
-            <br><br> Category:&nbsp{{myform.cate_selected.title}}
-            <br><br> Priority:&nbsp{{myform.priority}}%
-            <br>
-        </div>
-        <br>
-        <strong><p>Mail To</p></strong>
-        <a href="{{myform.email}}">{{myform.name}}&nbsp{{myform.lastName}}</a>
+            <p>Here is the confirmation for your query, if everything is correct, feel free to send it to us, we would love to take a look and get you back as soon as possible. In the meantime, you can send the confirmation to your email by clicking on the "Mail To" Link</p>
+            <strong><p>Confirmation ID<p></strong>
+            <p>#4498906229
+                <p>
+                    <strong><p>Confirmation Date<p></strong>
+                    <p ng-model="cureentTime">The current time is: {{currentTime|date:'medium'}}</p>
+                    <strong><p>Confirmation Details<p></strong>
+                    <div class="details">
+                        <p>====== Information =======
+                            <p>
+                                <p>Full Name:{{myform.name}}&nbsp{{myform.lastName}}
+                                    <br>
+                                    <br> Email:&nbsp{{myform.email}}
+                                    <br>
+                                    <br>Phone:&nbsp{{myform.phone}}
+                                    <br>
+                                    <br> Location:&nbsp{{myform.selected.title}}
+                                    <br>
+                                    <p>========= Query ==========
+                                        <p>
+                                            Title:{{myform.title}}
+                                            <br>
+                                            <br> Content:&nbsp{{myform.comment}}
+                                            <br>
+                                            <br> Category:&nbsp{{myform.cate_selected.title}}
+                                            <br>
+                                            <br> Priority:&nbsp{{myform.priority}}%
+                                            <br>
+                    </div>
+                    <br>
+                    <strong><p>Mail To</p></strong>
+                    <a href="mailto:{{myform.email}}">{{myform.name}}&nbsp{{myform.lastName}}</a>
         </uib-tab>
     </uib-tabset>
 </div>
