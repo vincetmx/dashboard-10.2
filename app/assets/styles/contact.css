@@ -13,9 +13,9 @@ color:black;
 #form_info label{
 color:black;
 }
-#form_info select{
+#form_info option:invalid{
 	width: 100%;
-	color: black;
+	color: red;
 }
 #form_info span{
 	color: black;

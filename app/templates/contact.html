@@ -30,7 +30,7 @@
                 <div class="form-group has-feedback">
                     <label for="input_location">Location</label>
                     <br>
-                    <select ng-options="item as item.title for item in locations track by item.value" ng-model="myform.selected"></select>
+                    <select class="form control" ng-options="item as item.title for item in locations track by item.value" ng-model="myform.selected" required></select>
                 </div>
                 <br>
                 <div class="show_time">

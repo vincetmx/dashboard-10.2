@@ -8,7 +8,7 @@ dashBoard.controller("TabCtrl", function($scope, contactService,$window) {
         .then(
             function mySuccess(response) {
                 $scope.locations = response.data.locations;
-                $scope.selected = $scope.locations[0];
+                $scope.myform.selected = $scope.locations[0];
             },
             function myError() {
                 console.log("ERROR");
