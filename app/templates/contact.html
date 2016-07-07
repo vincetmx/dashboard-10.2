@@ -30,17 +30,15 @@
                 <div id="location" class="form-group has-feedback">
                     <label for="input_location">Location</label>
                     <br>
-
-                    <select class="form control" ng-options="item as item.title for item in locations track by item.value" ng-model="myform.selected" required></select>
-
+                    <select class="form-control" ng-options="item as item.title for item in locations track by item.value" ng-model="myform.selected" required></select>
                 </div>
                 <br>
-                <div class="show_time">
+                <div class="alert alert-success" role="alert">
                     <p ng-model="cureentTime">The current time is: {{currentTime|date:'medium'}}</p>
                 </div>
                 <br>
             </form>
-            <button class="btn btn-default" ng-disabled="!form_info.$valid" ng-click="altActive(1)" class="myButton">Next</button>
+            <button class="btn btn-primary" ng-disabled="!form_info.$valid" ng-click="altActive(1)" class="myButton">Next</button>
         </uib-tab>
         <uib-tab index="1" id="tab_two" heading="Query" disable="!form_info.$valid">
             <form name="form_query" id="form_query">
@@ -55,17 +53,18 @@
                     <label for="comment">Comment:</label>
                     <textarea class="form-control" ng-model="myform.comment" rows="5" id="comment" required></textarea>
                 </div>
-                <select ng-options="item as item.title for item in categories track by item.value" ng-model="myform.cate_selected" required></select>
+                <select class="form-control" ng-options="item as item.title for item in categories track by item.value" ng-model="myform.cate_selected" required></select>
             </form>
             <br>
             <div ng-controller="RatingDemoCtrl">
-                <p>Priority
-                    <p>
-                        <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" required ng-model="myform.priority"></uib-rating>
-                        <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+                <lable for="priority">Priority</lable>
+                <div id="stars">
+                    <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" required ng-model="myform.priority"></uib-rating>
+                    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+                </div>
             </div>
             <br>
-            <button class="btn btn-default" ng-click="altActive(2)" class="myButton" ng-disabled="!form_query.$valid">Next</button>
+            <button class="btn btn-primary" ng-click="altActive(2)" class="myButton" ng-disabled="!form_query.$valid">Next</button>
         </uib-tab>
         <uib-tab index="2" id="tab_three" heading="Confirmation" disable="!form_query.$valid">
             <br>
