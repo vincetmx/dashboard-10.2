@@ -27,10 +27,12 @@
                     <input type="tel" class="form-control" id="input_phone" placeholder="Phone" ng-model="myform.phone" required>
                     <span class="glyphicon glyphicon-phone form-control-feedback" aria-hidden="true" ng-hide="false"></span>
                 </div>
-                <div class="form-group has-feedback">
+                <div id="location" class="form-group has-feedback">
                     <label for="input_location">Location</label>
                     <br>
+
                     <select class="form control" ng-options="item as item.title for item in locations track by item.value" ng-model="myform.selected" required></select>
+
                 </div>
                 <br>
                 <div class="show_time">
